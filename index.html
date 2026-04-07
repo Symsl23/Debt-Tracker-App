@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debt Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <h2>Debt Manager</h2>
+    <button class="btn-logout" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- LOGIN -->
+  <div id="auth" class="card auth-card">
+    <h3>Login / Sign Up</h3>
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <div class="btn-row">
+      <button onclick="login()">Login</button>
+      <button onclick="signup()">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="app" class="app-container">
+
+    <!-- Add Debt Form -->
+    <div class="card form-card">
+      <h3>Add Debt</h3>
+      <input id="creditor" placeholder="Creditor">
+      <input id="amount" type="number" step="0.01" placeholder="Amount">
+      <input id="date" type="date" placeholder="Date">
+      <input id="bank" placeholder="Bank Info">
+      <input id="description" placeholder="Description">
+      <button class="btn-add" onclick="addDebt()">Add Debt</button>
+    </div>
+
+    <!-- Debts List -->
+    <h3>Debts</h3>
+    <div id="debtList" class="debt-cards"></div>
+
+    <h3>Total Unpaid: RM <span id="total">0.00</span></h3>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
